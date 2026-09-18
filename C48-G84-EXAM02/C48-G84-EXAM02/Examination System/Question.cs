@@ -8,12 +8,14 @@ namespace C48_G84_EXAM02.Examination_System
     {
 
         #region Fields:
+
         private string header;
         private string body;
         private int mark;
 
         private Answers[] answerList;
         private Answers rightAnswer;
+        private Answers userAnswer;
 
 
 
@@ -27,11 +29,21 @@ namespace C48_G84_EXAM02.Examination_System
 
         public List<Answers> AnswerList { get; set; }
         public Answers RightAnswer { get; set; }
+        public Answers UserAnswer { get; set; }
+
 
         #endregion
 
         #region Methods:
         public override abstract string ToString();
+        public  bool CompareAnswers(int answerId)
+        {
+            if (RightAnswer.AnswerId == answerId)
+            {
+                return true;
+            }
+            return false;
+        }
 
         #endregion
 
